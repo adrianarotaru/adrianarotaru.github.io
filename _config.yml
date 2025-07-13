@@ -7,9 +7,9 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Adriana Rotaru"
+title                    : "Adriana Galer Rotaru"
 title_separator          : "-"
-name                     : &name "Adriana Rotaru"
+name                     : &name "Adriana Galer Rotaru"
 description              : &description "drones, technology, medicine"
 url                      : https://adrianarotaru.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -80,14 +80,14 @@ analytics:
 
 # Site Author
 author:
-  name             : "Adriana Rotaru"
+  name             : "Adriana Galer Rotaru"
   avatar           : "profile.png"
-  bio              : "Technology Enthusiast"
-  location         : "Boston, MA"
+  bio              : "Software Engineer Specializing in Autonomous Tech"
+  location         : "San Francisco, CA"
   employer         : "Zipline International, Inc."
   pubmed           : #"https://ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : #"https://scholar.google.com/this-is-a-test"
-  email            : "rotaruadriana172@gmail.com"
+  email            : "adriana.galer.rotaru@gmail.com"
   researchgate     :  # example: "https://researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
