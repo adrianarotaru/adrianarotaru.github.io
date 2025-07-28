@@ -4,7 +4,7 @@ collection: media
 type: "Article"
 permalink: /article/Australia-inkl
 venue: "Inkl News"
-date: Australia
+date: 2025-07-13
 location: "https://www.inkl.com/news/the-secrets-to-building-scalable-and-reliable-autonomous-technologies"
 ---
 
