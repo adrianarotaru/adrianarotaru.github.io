@@ -13,4 +13,6 @@ Snoring is related to a common medical condition that can lead to many serious h
 
 [Download paper here](https://adrianarotaru.github.io/files/snoring.pdf)
 
+[ICAD 2025 Conference Paper here](https://ieee-icad.org/abstracts/)
+
 [![Snoring Detection on a Microcontroller](../images/snoring.png)](https://www.youtube.com/watch?v=aQpIooBEGsA)
