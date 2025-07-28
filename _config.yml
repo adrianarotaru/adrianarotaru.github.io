@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "Adriana Rotaru"
   avatar           : "profile.png"
-  bio              : "Technology Enthusiast"
-  location         : "Boston, MA"
-  employer         : "Zipline International, Inc."
+  bio              : "Software Engineer"
+  location         : "San Francisco, CA"
+  employer         : "Stealth"
   pubmed           : #"https://ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : #"https://scholar.google.com/this-is-a-test"
-  email            : "rotaruadriana172@gmail.com"
+  email            : "adriana.galer.rotaru@gmail.com"
   researchgate     :  # example: "https://researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
