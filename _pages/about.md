@@ -8,8 +8,5 @@ redirect_from:
   - /about.html
 ---
 
-Hi! Welcome to my profile! I am an enthusiastic young woman in tech, interested in autonomous technology, AI, and green energy research. In the past, I have conductive extensive research in cardiology,  and now I am focusing on technology applications in healthcare. I am pursuing a career in autonomous drone delivery and I am an avid supporter of women in tech.
+Hi! Welcome to my profile! I am a software engineer specializing in autonomous and medical technologies. In the past, I have conductive medical research in cardiology and I have scaled autonomous drone technology, delivering 1.2mln vaccines and blood doses globally. I currently advise early stage companies and founders on scaling reliable technology and building companies myself.
 
-
-
-My hobbies include: *chess, searching for talented perfume artists,  writing, and reading.*
