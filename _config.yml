@@ -7,9 +7,9 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Adriana Rotaru"
+title                    : "Adriana Galer Rotaru"
 title_separator          : "-"
-name                     : &name "Adriana Rotaru"
+name                     : &name "Adriana Galer Rotaru"
 description              : &description "drones, technology, medicine"
 url                      : https://adrianarotaru.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -80,7 +80,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Adriana Rotaru"
+  name             : "Adriana Galer Rotaru"
   avatar           : "profile.png"
   bio              : "Software Engineer"
   location         : "San Francisco, CA"
