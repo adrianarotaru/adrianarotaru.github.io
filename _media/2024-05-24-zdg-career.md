@@ -1,5 +1,5 @@
 ---
-title: "Media Article about Robotics as a field and my professional journey"
+title: "[Romanian] Media Article - Robotics as a field and my professional journey"
 collection: media
 type: "Article"
 permalink: /article/2024-05-24-zdg-career
