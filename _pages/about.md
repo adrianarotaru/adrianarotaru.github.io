@@ -2,7 +2,7 @@
 permalink: /
 layout: home
 title: "Adriana Galer Rotaru"
-tagline: "autonomous systems · medical technology · advising · investing"
+tagline: "medical technology · advising · investing"
 excerpt: "Engineer working on autonomous and medical technologies. Advisor and investor in early-stage companies."
 author_profile: false
 redirect_from:
