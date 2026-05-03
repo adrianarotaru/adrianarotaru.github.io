@@ -1,0 +1,232 @@
+/* ==========================================================================
+   HOME (front page)
+   Tech-forward minimal layout, scoped to `.home`. Inspired by ssi.inc + pi.website.
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
+
+$home-bg          : #fafaf7;
+$home-fg          : #0a0a0a;
+$home-muted       : #6b6b66;
+$home-line        : #e6e5df;
+$home-accent      : #0a0a0a;
+$home-sans        : "Inter", -apple-system, ".SFNSText-Regular", "Helvetica Neue", Arial, sans-serif;
+$home-mono        : "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+/* Repaint the chrome (masthead + footer + body bg) only when the home page is rendered.
+   We use `body:has(.home)` so other pages remain untouched. */
+body:has(.home) {
+  background: $home-bg;
+  color: $home-fg;
+  font-family: $home-sans;
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-bottom: 0;
+
+  .masthead {
+    background: $home-bg;
+    border-bottom: 1px solid $home-line;
+    animation: none;
+
+    &__inner-wrap {
+      padding: 1.25rem 1.5rem;
+      font-family: $home-sans;
+      max-width: 1100px;
+
+      a {
+        color: $home-fg;
+        font-weight: 500;
+        font-size: 0.9rem;
+        letter-spacing: -0.005em;
+        opacity: 0.55;
+        transition: opacity 0.15s ease;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .greedy-nav {
+    background: transparent;
+
+    .visible-links {
+      .masthead__menu-item--lg a {
+        opacity: 1;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .page__footer {
+    background: $home-bg;
+    border-top: 1px solid $home-line;
+    color: $home-muted;
+    font-family: $home-sans;
+    font-size: 0.8rem;
+
+    a { color: $home-fg; }
+  }
+}
+
+/* The home content. */
+.home {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem 8rem;
+
+  @media (min-width: 768px) {
+    padding: 8rem 2rem 10rem;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-family: $home-mono;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: $home-muted;
+  }
+
+  &__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #16a34a;
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+    animation: home-pulse 2.4s ease-in-out infinite;
+  }
+
+  &__location {
+    text-transform: none;
+    letter-spacing: 0.02em;
+  }
+
+  &__name {
+    font-family: $home-sans;
+    font-size: clamp(2.2rem, 5.5vw, 3.4rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+    margin: 0;
+    color: $home-fg;
+  }
+
+  &__role {
+    font-family: $home-sans;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    font-weight: 400;
+    color: $home-muted;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  &__content {
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: $home-fg;
+    letter-spacing: -0.005em;
+
+    p {
+      margin: 0 0 1.1em;
+
+      &:last-child { margin-bottom: 0; }
+    }
+
+    a {
+      color: $home-fg;
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 1px;
+      transition: opacity 0.15s ease;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+
+    strong { font-weight: 600; }
+    em { font-style: italic; color: $home-muted; }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid $home-line;
+    margin-top: 1rem;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid $home-line;
+    color: $home-fg;
+    text-decoration: none;
+    font-family: $home-sans;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    transition: padding 0.18s ease, color 0.18s ease;
+
+    &:hover {
+      padding-left: 0.5rem;
+      color: #000;
+
+      .home__link-arrow {
+        transform: translateX(4px);
+        opacity: 1;
+      }
+    }
+  }
+
+  &__link-label {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.65rem;
+
+    &::before {
+      content: "→";
+      display: none;
+    }
+  }
+
+  &__link-arrow {
+    display: inline-block;
+    font-family: $home-mono;
+    color: $home-muted;
+    opacity: 0.6;
+    transition: transform 0.18s ease, opacity 0.18s ease;
+  }
+
+  &__meta {
+    margin-top: 2rem;
+    font-family: $home-mono;
+    font-size: 0.72rem;
+    color: $home-muted;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+}
+
+@keyframes home-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.5; }
+}

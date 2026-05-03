@@ -1,0 +1,58 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+{% if page.author and site.data.authors[page.author] %}
+  {% assign author = site.data.authors[page.author] %}
+{% else %}
+  {% assign author = site.author %}
+{% endif %}
+
+<div id="main" class="home" role="main">
+  <article class="home__wrap" itemscope itemtype="https://schema.org/Person">
+    {% if page.title %}<meta itemprop="name" content="{{ author.name }}">{% endif %}
+    {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+
+    <header class="home__header">
+      <div class="home__eyebrow">
+        <span class="home__dot" aria-hidden="true"></span>
+        <span class="home__location">{{ author.location | default: "San Francisco, CA" }}</span>
+      </div>
+      <h1 class="home__name" itemprop="name">{{ author.name }}</h1>
+      {% if page.role %}
+        <p class="home__role">{{ page.role }}</p>
+      {% endif %}
+    </header>
+
+    <section class="home__content" itemprop="description">
+      {{ content }}
+    </section>
+
+    <nav class="home__links" aria-label="Contact">
+      {% if author.email %}
+        <a class="home__link" href="mailto:{{ author.email }}">
+          <span class="home__link-label">Email</span>
+          <span class="home__link-arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      {% endif %}
+      {% if author.linkedin %}
+        <a class="home__link" href="https://linkedin.com/in/{{ author.linkedin }}" target="_blank" rel="noopener">
+          <span class="home__link-label">LinkedIn</span>
+          <span class="home__link-arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      {% endif %}
+      {% if author.github %}
+        <a class="home__link" href="https://github.com/{{ author.github }}" target="_blank" rel="noopener">
+          <span class="home__link-label">GitHub</span>
+          <span class="home__link-arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      {% endif %}
+    </nav>
+
+    <footer class="home__meta">
+      <span class="home__meta-item">v2 · {{ site.time | date: "%Y" }}</span>
+    </footer>
+  </article>
+</div>
