@@ -6,8 +6,8 @@ main:
   - title: "Research"
     url: /research/
 
-  - title: "Projects"
-    url: /projects/
+  - title: "Technical Notes"
+    url: /technical-notes/
 
   - title: "Featured In"
     url: /media/    
@@ -17,6 +17,9 @@ main:
     
   # - title: "Portfolio"
   #   url: /portfolio/
+
+  - title: "Projects"
+    url: /projects/
 
   - title: "Personal Notes"
     url: /year-archive/

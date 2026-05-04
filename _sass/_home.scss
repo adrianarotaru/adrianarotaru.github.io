@@ -1149,6 +1149,42 @@ li.home__advise-item {
   color: $home-fg;
 }
 
+/* Technical Notes cards — preview body and CTA link span the full card width
+   (no label column), so we render as plain block elements instead of using
+   the labeled-row grid layout that the advising cards use. */
+.technical-note__preview {
+  margin: 0.75rem 0 0.5rem;
+
+  p {
+    margin: 0;
+    color: $home-fg;
+    font-size: 0.93rem;
+    line-height: 1.6;
+    letter-spacing: -0.005em;
+  }
+}
+
+.technical-note__cta {
+  margin-top: 0.5rem;
+}
+
+ul.home__advise a.technical-note__read-more {
+  font-family: $home-mono;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: $home-muted;
+  text-decoration: underline;
+  text-decoration-color: $home-line;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+
+  &:hover,
+  &:focus-visible {
+    color: $home-fg;
+    text-decoration-color: $home-fg;
+  }
+}
+
 /* Card links use a single, controllable underline via `text-decoration-color`.
    Higher specificity (`ul.home__advise … a`) deliberately beats the global
    `.archive a` rule in `_archive.scss` that would otherwise stack a second

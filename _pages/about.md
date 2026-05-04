@@ -2,7 +2,7 @@
 permalink: /
 layout: home
 title: "Adriana Galer Rotaru"
-tagline: "autonomous systems · healthtech · advising"
+tagline: "builder · advisor · investor"
 excerpt: "Technical leader building technology for the physical world — agentic systems at Serval, scaling autonomous and healthtech companies, and helping founders mature their engineering organizations."
 author_profile: false
 redirect_from:
@@ -19,9 +19,9 @@ tiles:
   - title: "Featured In"
     description: "Articles, interviews, and press features about my work."
     url: /media/
-  - title: "Projects"
-    description: "Side projects in embedded ML, autonomous systems, and graphics."
-    url: /projects/
+  - title: "Technical Notes"
+    description: "Articles, essays, and notes on building reliable autonomous and embedded technology."
+    url: /technical-notes/
 ---
 
 I'm passionate about **building technology for the physical world** — where reliability and customer safety is non-negotiable.

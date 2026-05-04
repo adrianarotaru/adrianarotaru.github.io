@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Advising, Investing &amp; Building"
+title: "Startups"
 permalink: /advising/
 author_profile: false
 ---

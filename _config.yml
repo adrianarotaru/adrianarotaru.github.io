@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Adriana Galer Rotaru"
 title_separator          : "-"
 name                     : &name "Adriana Galer Rotaru"
-description              : &description "drones, technology, medicine"
+description              : &description "builder, advisor, investor"
 url                      : https://adrianarotaru.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "adrianarotaru.github.io"
@@ -190,6 +190,9 @@ collections:
   media:
     output: true
     permalink: /:collection/:path/
+  technical_notes:
+    output: true
+    permalink: /technical-notes/:path/
 
 
 # Defaults
@@ -248,6 +251,13 @@ defaults:
   - scope:
       path: ""
       type: media
+    values:
+      layout: article
+      share: true
+  # _technical_notes
+  - scope:
+      path: ""
+      type: technical_notes
     values:
       layout: article
       share: true
