@@ -2,7 +2,7 @@
 layout: archive
 title: "Research"
 permalink: /research/
-author_profile: true
+author_profile: false
 ---
 
 {% if author.googlescholar %}
@@ -12,5 +12,23 @@ author_profile: true
 {% include base_path %}
 
 {% for post in site.research reversed %}
-  {% include archive-single.html %}
+  <div class="list__item">
+    <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+      <h2 class="archive__item-title" itemprop="headline">{{ post.title }}</h2>
+
+      <p><i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
+
+      {% if post.excerpt %}
+        <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
+      {% endif %}
+
+      {% if post.citation %}
+        <p>Recommended citation: {{ post.citation }}</p>
+      {% endif %}
+
+      {% if post.paperurl %}
+        <p><a href="{{ post.paperurl }}"><u>Abstract</u></a></p>
+      {% endif %}
+    </article>
+  </div>
 {% endfor %}

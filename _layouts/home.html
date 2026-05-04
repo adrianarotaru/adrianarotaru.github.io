@@ -1,0 +1,81 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+{% if page.author and site.data.authors[page.author] %}
+  {% assign author = site.data.authors[page.author] %}
+{% else %}
+  {% assign author = site.author %}
+{% endif %}
+
+<div id="main" class="home" role="main">
+  <article class="home__wrap" itemscope itemtype="https://schema.org/Person">
+    <meta itemprop="name" content="{{ author.name }}">
+    {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+
+    <header class="home__header">
+      {% if author.avatar %}
+        <div class="home__portrait" aria-hidden="true">
+          <img src="{{ author.avatar | prepend: '/images/' | prepend: base_path }}" alt="" loading="eager" decoding="async">
+        </div>
+      {% endif %}
+
+      <h1 class="home__name" itemprop="name">{{ author.name }}</h1>
+
+      {% if page.tagline %}
+        <p class="home__tagline">
+          {% assign parts = page.tagline | split: "·" %}
+          {% for part in parts %}<span>{{ part | strip }}</span>{% unless forloop.last %}<span class="home__tagline-sep" aria-hidden="true">✶</span>{% endunless %}{% endfor %}
+        </p>
+      {% endif %}
+
+      <div class="home__eyebrow">
+        <span class="home__dot" aria-hidden="true"></span>
+        <span class="home__location">{{ author.location | default: "San Francisco, CA" }}</span>
+      </div>
+
+      <ul class="home__socials" aria-label="Social links">
+        {% if author.github %}
+          <li>
+            <a href="https://github.com/{{ author.github }}" aria-label="GitHub" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            </a>
+          </li>
+        {% endif %}
+        {% if author.linkedin %}
+          <li>
+            <a href="https://linkedin.com/in/{{ author.linkedin }}" aria-label="LinkedIn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.62 0 4.29 2.39 4.29 5.5zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.55V9h3.57zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"/></svg>
+            </a>
+          </li>
+        {% endif %}
+        {% if author.email %}
+          <li>
+            <a href="mailto:{{ author.email }}" aria-label="Email">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+    </header>
+
+    <section class="home__content" itemprop="description">
+      {{ content }}
+    </section>
+
+    {% if page.tiles %}
+    <nav class="home__tiles" aria-label="Sections">
+      {% for tile in page.tiles %}
+        <a class="home__tile" href="{{ tile.url | prepend: base_path }}" style="--tile-index: {{ forloop.index0 }};">
+          <span class="home__tile-title">{{ tile.title }}</span>
+          {% if tile.description %}<span class="home__tile-desc">{{ tile.description }}</span>{% endif %}
+          <span class="home__tile-arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      {% endfor %}
+    </nav>
+    {% endif %}
+
+  </article>
+</div>

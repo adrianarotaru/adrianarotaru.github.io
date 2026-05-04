@@ -1,0 +1,145 @@
+# Early Stage Startup Advising & Founder's support.
+# Rendered in two places:
+#   - Home page (/) — compact teaser list (first few entries)
+#   - /advising/ page — full detail for every entry
+#
+# Ordering: named (non-stealth) engagements first, reverse chronological by
+# start year; stealth engagements grouped at the end, also reverse chronological.
+
+engagements:
+  - company: "SkyEU"
+    url: "https://www.skyeu.it/"
+    linkedin: "https://www.linkedin.com/company/skyeu/"
+    domain: "Drones · Medical delivery"
+    location: "Turin, Italy · Seed"
+    period: "2026 — present"
+    short: "Autonomous eVTOL medical-delivery drones, Europe."
+    founders:
+      - name: "Mirko Franzoni"
+        linkedin: "https://www.linkedin.com/in/mirko-franzoni-578b21270/"
+      - name: "Niccolò Fratamico"
+    goal: "Autonomous eVTOL drones for emergency medical delivery across Europe, with a mission to lift sudden-cardiac-arrest survival from ~8% to 60% by cutting response times."
+    scope:
+      - topic: "Regulatory Strategy & Certification"
+        detail: "EU certification path for medical drone operations."
+      - topic: "Medical-Grade Engineering"
+        detail: "design and operational rigor for high-precision medical delivery payloads."
+      - topic: "Next-Market Expansion"
+        detail: "sequencing entry into adjacent European markets."
+      - topic: "Fundraising Access"
+        detail: "investor introductions and round positioning."
+    partners:
+      - name: "KC4"
+      - name: "ABZero"
+        url: "https://www.abzero.it/"
+      - name: "Beamflight"
+        url: "https://www.beamflight.com/"
+    achievement: "Selected for the Rubik Garage HealthTech Edition accelerator program (Rubik Hub)."
+
+  - company: "Kontaris"
+    url: "https://www.kontaris.de/"
+    linkedin: "https://www.linkedin.com/company/kontaris/"
+    domain: "HealthTech · AI infrastructure"
+    location: "Munich, Germany"
+    period: "2025 — present"
+    short: "Financial infrastructure for hospitals."
+    founders:
+      - name: "Raphael Kaiser"
+        linkedin: "https://de.linkedin.com/in/raphael-kaiser"
+      - name: "Carlos Menke"
+        linkedin: "https://www.linkedin.com/in/mcmenke/"
+    goal: "AI infrastructure for hospital finance — automating the regulatory and billing workflows that sit between hospitals and payors."
+    scope:
+      - topic: "Engineering Organization Growth"
+        detail: "scaling the engineering team for a platform shipping into heavily regulated healthcare-finance buyers."
+      - topic: "Technical Vision and Leadership"
+        detail: "defining the organizational values and technical direction"
+    # achievement: # TODO
+
+  - company: "Arda"
+    url: "https://www.ardaimpact.com/"
+    linkedin: "https://www.linkedin.com/company/ardaimpact/"
+    domain: "Drones · Logistics"
+    location: "New York, US · Banjul, Gambia"
+    period: "2021 — 2022"
+    short: "Enterprise drone delivery, EU expansion and certification."
+    founders:
+      - name: "Jan Kryca"
+        linkedin: "https://www.linkedin.com/in/jkryca/"
+    goal: "Scalable drone delivery for enterprise last-mile logistics, operated from a smartphone or tablet — with an early focus on underserved markets."
+    scope:
+      - topic: "EU Market Expansion"
+        detail: "entry strategy for European drone-delivery markets."
+      - topic: "Regulatory Certification"
+        detail: "guidance on the drone-operations certification path in the EU."
+    # achievement: # TODO — note: public signals suggest the company may have wound down; confirm framing
+
+  # ── Stealth engagements ──────────────────────────────────────────────────────
+
+  - company: "Stealth"
+    domain: "Drones · Software and 3D Map Analytics"
+    location: "US · Seed · Stealth"
+    period: "2026 — present"
+    short: "Guiding engineering org growth to first autonomous pilots."
+    founders:
+      - name: "Nabeel Alamgir"
+        linkedin: "https://www.linkedin.com/in/nabeelalamgir/"
+    backers:
+      - name: "Coatue"
+        url: "https://www.coatue.com/"
+    scope:
+      - topic: "Engineering Organization Growth"
+        detail: "scaling the engineering org from research toward shipping product."
+      - topic: "Research-to-Pilot Roadmap"
+        detail: "path from research to first end-to-end autonomous pilots."
+      - topic: "Leadership Cadence"
+        detail: "weekly advisor sessions with the leadership team."
+    achievement: "Backed by Coatue; sold to 10+ customers, including fortune 100 companies."
+
+  - company: "Stealth"
+    domain: "Drones"
+    location: "India · Seed · Stealth"
+    period: "2025"
+    short: "Home-delivery drone platform, market expansion."
+    team:
+      - role: "Head of Engineering"
+        name: "Rushil Batra"
+        linkedin: "https://www.linkedin.com/in/rushilbatra/"
+    scope:
+      - topic: "Market Entry, PMF"
+        detail: "advising on next-market entry, platform delivery, customer needs."
+      - topic: "Operational Scaling"
+        detail: "scaling light-package, high-precision home delivery for urban areas."
+
+  - company: "Stealth"
+    domain: "HealthTech · Consumer"
+    location: "Eastern Europe"
+    period: "2025"
+    short: "Consumer weight-loss apps, Middle East expansion."
+    founders:
+      - name: "Dr. Suzanne O'Connell"
+        linkedin: "https://www.linkedin.com/in/dr-suzanne-o-connell/"
+    scope:
+      - topic: "Product Strategy"
+        detail: "consumer weight-loss and tracking apps."
+      - topic: "Middle East Expansion"
+        detail: "go-to-market sequencing for new geographies."
+
+# Prior full-time operating experience. Rendered in its own section on /advising/
+# to keep it visually and semantically separate from advising/investing engagements.
+operating:
+  - company: "Zipline"
+    url: "https://www.zipline.com/"
+    linkedin: "https://www.linkedin.com/company/zipline/"
+    domain: "Drones · Instant logistics · Medical & home delivery"
+    location: "South San Francisco, US · Global ops"
+    period: "4 years"
+    short: "Routing engine and airspace operations on the world's largest autonomous logistics network."
+    scope:
+      - topic: "Routing Engine"
+        detail: "built core pieces of the routing engine powering Zipline's autonomous flights."
+      - topic: "Airspace Expansion & Operationability"
+        detail: "major contributor across new countries and US sites."
+      - topic: "Multi-Platform Operations"
+        detail: "covering both Platform 1 (long-range fixed-wing medical delivery) and Platform 2 (precision home delivery)."
+    achievement: "Helped scale to 2M+ commercial autonomous deliveries; first operator authorized under the FAA BEYOND program for long-range BVLOS Part 135 deliveries (fixed-wing); instantaneous deliveries on Platform 1 and Platform 2."

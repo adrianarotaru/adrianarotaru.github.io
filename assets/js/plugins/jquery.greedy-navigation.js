@@ -33,17 +33,23 @@ function updateNav() {
   // The visible list is not overflowing
   } else {
 
-    // There is space for another item in the nav
-    if(availableSpace > breaks[breaks.length-1]) {
+    // There is space for another item in the nav — but only restore items the
+    // greedy algorithm pushed itself. Persistent secondary links pre-populated
+    // into `.hidden-links` (e.g. "Featured In", "Projects") stay in the
+    // dropdown regardless of available space.
+    if(breaks.length > 0 && availableSpace > breaks[breaks.length-1]) {
 
       // Move the item to the visible list
       $hlinks.children().first().appendTo($vlinks);
       breaks.pop();
     }
 
-    // Hide the dropdown btn if hidden list is empty
     if(breaks.length < 1) {
-      $btn.addClass('hidden');
+      if($hlinks.children().length < 1) {
+        $btn.addClass('hidden');
+      } else {
+        $btn.removeClass('hidden');
+      }
       $hlinks.addClass('hidden');
     }
   }
@@ -70,3 +76,8 @@ $btn.on('click', function() {
 });
 
 updateNav();
+
+// Always show the hamburger when the dropdown has items (secondary links).
+if ($hlinks.children().length > 0) {
+  $btn.removeClass('hidden');
+}

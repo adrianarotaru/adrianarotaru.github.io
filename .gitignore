@@ -1,2 +1,7 @@
 _site/
-
+.local-gems/
+vendor/
+.bundle/
+Gemfile.dev.lock
+.jekyll-cache/
+.jekyll-metadata

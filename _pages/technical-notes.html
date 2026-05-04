@@ -1,0 +1,35 @@
+---
+layout: archive
+title: "Writing"
+permalink: /technical-notes/
+author_profile: false
+---
+
+
+<ul class="home__advise">
+  {% assign notes = site.technical_notes | sort: 'date' | reverse %}
+  {% for note in notes %}
+    <li class="home__advise-item reveal" id="{{ note.title | slugify }}">
+      <div class="home__advise-head">
+        <span class="home__advise-company">
+          {% if note.external_url %}<a href="{{ note.external_url }}" target="_blank" rel="noopener">{{ note.title }}</a>{% else %}{{ note.title }}{% endif %}
+          {% if note.venue %}<span class="home__advise-ext">{{ note.venue }}</span>{% endif %}
+        </span>
+        <span class="home__advise-period">{{ note.date | date: '%b %Y' }}</span>
+      </div>
+      {% if note.topic %}
+        <div class="home__advise-meta">{{ note.topic }}</div>
+      {% endif %}
+
+      <div class="technical-note__preview">
+        <p>{{ note.content | strip_html | truncatewords: 70 }}</p>
+      </div>
+
+      {% if note.external_url %}
+        <div class="technical-note__cta">
+          <a href="{{ note.external_url }}" target="_blank" rel="noopener" class="technical-note__read-more">Read the full article&rarr;</a>
+        </div>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

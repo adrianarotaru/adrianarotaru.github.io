@@ -191,14 +191,25 @@
 
   button {
     position: absolute;
-    height: 100%;
+    top: 0;
     right: 0;
-    padding: 0 0.5rem;
+    height: 100%;
+    width: 36px;
+    padding: 0;
     border: 0;
     outline: none;
-    background-color: $primary-color;
-    color: #fff;
+    background-color: transparent;
+    color: $masthead-link-color;
     cursor: pointer;
+    opacity: 0.5;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+    display: block !important;
+    visibility: visible !important;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
   .visible-links {
