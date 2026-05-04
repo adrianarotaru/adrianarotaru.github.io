@@ -39,6 +39,12 @@ body {
     margin-left: auto;
     margin-right: auto;
 
+    /* Match `body #main`'s padding bump at >= 768px so the brand link's left
+       edge lines up exactly with the page content below it on inner pages. */
+    @media (min-width: 768px) {
+      padding: 1.1rem 2rem;
+    }
+
     a {
       color: $home-fg;
       font-weight: 500;
@@ -71,9 +77,10 @@ body {
   a { color: $home-fg; }
 }
 
-/* The home content. */
+/* The home content. Width matches `body #main` (880px) so the home page lines
+   up horizontally with inner pages and the masthead brand link. */
 .home {
-  max-width: 720px;
+  max-width: 880px;
   margin: 0 auto;
   padding: 3rem 1.5rem 5rem;
 
@@ -787,9 +794,12 @@ html.polish-ready .home__advise > .reveal:nth-child(6).is-visible { transition-d
    Applies the home aesthetic to the legacy archive layout.
    ========================================================================== */
 
-/* Reset the legacy MM grid that creates a sidebar gutter. */
+/* Reset the legacy MM grid that creates a sidebar gutter.
+   Width matches `.masthead__inner-wrap` (880px) so inner-page content lines up
+   horizontally with the masthead brand link on the left. The home page (`.home`)
+   keeps its narrower 720px container below for the centered hero layout. */
 body #main {
-  max-width: 720px;
+  max-width: 880px;
   margin: 0 auto;
   padding: 3rem 1.5rem 4rem;
 
@@ -996,30 +1006,37 @@ body #main {
    ========================================================================== */
 
 /* Section lede on /advising/ (tag + class specificity beats `.archive > p`). */
-p.advise-lede {
-  font-size: 0.9rem !important;
-  line-height: 1.6 !important;
-  color: $home-muted;
-  letter-spacing: -0.005em;
-  margin: -0.25rem 0 1.5rem !important;
-  max-width: 58ch;
+.advise-lede {
+  margin: -0.25rem 0 1.75rem !important;
+
+  p {
+    font-size: 0.95rem !important;
+    line-height: 1.65 !important;
+    color: $home-muted;
+    letter-spacing: -0.005em;
+    margin: 0 0 0.9em !important;
+
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
 }
 
-/* Subsection headings on /advising/ — split between advising/investing and
-   prior operating experience. Quiet, monospace label rather than a heavy h2. */
+/* Subsection headings on /advising/ — split between advising engagements
+   and operating/building experience. Sans-serif h2 sized as a true section
+   title (clearly smaller than `.page__title`, clearly larger than card text). */
 h2.advise-section-heading {
-  font-family: $home-mono;
-  font-size: 0.75rem !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: $home-muted;
-  margin: 2.25rem 0 0.75rem !important;
-  padding-bottom: 0.4rem;
-  border-bottom: 1px solid rgba($home-fg, 0.08);
+  font-family: $home-sans;
+  font-size: clamp(1.15rem, 2vw, 1.35rem) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.015em;
+  color: $home-fg;
+  margin: 3rem 0 1rem !important;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid $home-line;
 
   &:first-of-type {
-    margin-top: 1rem !important;
+    margin-top: 1.75rem !important;
   }
 }
 

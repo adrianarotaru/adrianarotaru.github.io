@@ -42,7 +42,7 @@ engagements:
     domain: "HealthTech · AI infrastructure"
     location: "Munich, Germany"
     period: "2025 — present"
-    short: "AI infrastructure for hospital finance."
+    short: "Financial infrastructure for hospitals."
     founders:
       - name: "Raphael Kaiser"
         linkedin: "https://de.linkedin.com/in/raphael-kaiser"
@@ -50,10 +50,10 @@ engagements:
         linkedin: "https://www.linkedin.com/in/mcmenke/"
     goal: "AI infrastructure for hospital finance — automating the regulatory and billing workflows that sit between hospitals and payors."
     scope:
-      - topic: "Engineering Organization Building"
+      - topic: "Engineering Organization Growth"
         detail: "scaling the engineering team for a platform shipping into heavily regulated healthcare-finance buyers."
-      - topic: "Technical Hiring"
-        detail: "sourcing and assessment for senior engineering roles."
+      - topic: "Technical Vision and Leadership"
+        detail: "defining the organizational values and technical direction"
     # achievement: # TODO
 
   - company: "Arda"
@@ -77,7 +77,7 @@ engagements:
   # ── Stealth engagements ──────────────────────────────────────────────────────
 
   - company: "Stealth"
-    domain: "Drones · Autonomous systems"
+    domain: "Drones · Software and 3D Map Analytics"
     location: "US · Seed · Stealth"
     period: "2026 — present"
     short: "Guiding engineering org growth to first autonomous pilots."
@@ -94,6 +94,7 @@ engagements:
         detail: "path from research to first end-to-end autonomous pilots."
       - topic: "Leadership Cadence"
         detail: "weekly advisor sessions with the leadership team."
+    achievement: "Backed by Coatue; sold to 10+ customers, including fortune 100 companies."
 
   - company: "Stealth"
     domain: "Drones"
@@ -105,8 +106,8 @@ engagements:
         name: "Rushil Batra"
         linkedin: "https://www.linkedin.com/in/rushilbatra/"
     scope:
-      - topic: "Market Expansion"
-        detail: "advising on next-market entry."
+      - topic: "Market Entry, PMF"
+        detail: "advising on next-market entry, platform delivery, customer needs."
       - topic: "Operational Scaling"
         detail: "scaling light-package, high-precision home delivery for urban areas."
 
@@ -134,7 +135,6 @@ operating:
     location: "South San Francisco, US · Global ops"
     period: "4 years"
     short: "Routing engine and airspace operations on the world's largest autonomous logistics network."
-    scope_label: "Role"
     scope:
       - topic: "Routing Engine"
         detail: "built core pieces of the routing engine powering Zipline's autonomous flights."
@@ -142,5 +142,4 @@ operating:
         detail: "major contributor across new countries and US sites."
       - topic: "Multi-Platform Operations"
         detail: "covering both Platform 1 (long-range fixed-wing medical delivery) and Platform 2 (precision home delivery)."
-    achievement_label: "Milestones"
     achievement: "Helped scale to 2M+ commercial autonomous deliveries; first operator authorized under the FAA BEYOND program for long-range BVLOS Part 135 deliveries (fixed-wing); instantaneous deliveries on Platform 1 and Platform 2."

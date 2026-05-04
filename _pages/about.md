@@ -10,24 +10,24 @@ redirect_from:
   - /about.html
 
 tiles:
+  - title: "Startups"
+    description: "Advising and angel investing in drone delivery, autonomous systems, and healthtech."
+    url: /advising/
   - title: "Research"
     description: "Published papers in cardiology, embedded ML, and microcontroller systems."
     url: /research/
+  - title: "Featured In"
+    description: "Articles, interviews, and press features about my work."
+    url: /media/
   - title: "Projects"
     description: "Side projects in embedded ML, autonomous systems, and graphics."
     url: /projects/
-  - title: "Advising"
-    description: "Advising and angel investing in drone delivery, autonomous systems, and healthtech."
-    url: /advising/
-  - title: "Media & talks"
-    description: "Interviews, articles, and conference appearances."
-    url: /media/
 ---
 
-I'm passionate about **building technology for the physical world** — autonomous systems and medical / healthcare technology, where software meets atoms and reliability is non-negotiable.
+I'm passionate about **building technology for the physical world** — where reliability and customer safety is non-negotiable.
 
-My work sits at three intersections: **growing businesses** in regulated, real-world markets; **building agentic technology** that takes meaningful actions on behalf of people; and **helping companies mature** — designing engineering organizations, setting the values that compound into culture, and supporting founders through the moments where it counts.
+My work sits at three intersections: **supporting early-stage companies** in healthtech and drone markets; **investing in founders and exceptional talent**; and **helping companies mature** — through designing engineering organizations, defining the early company values that set the culture, and supporting founders through meaningful connections and funding resources.
 
-I graduated from Harvard in 2021 with a degree in **Computer Science and Physics**. Since then I've worked on developer tools at [Microsoft](https://azure.microsoft.com/), spent four years scaling autonomous drone systems and medical deliveries at [Zipline](https://www.zipline.com/), and now build enterprise AI agents as a Founding Engineer at [Serval](https://serval.ai/). On the side, I advise and angel-invest in early-stage founders building hard things in regulated markets.
+I graduated from Harvard in 2021 with a degree in **Computer Science and Physics**. Since then I've worked on developer tools at Microsoft, spent four years scaling autonomous drone systems and medical deliveries at [Zipline](https://www.zipline.com/), and now build enterprise AI agents as a Founding Engineer at [Serval](https://serval.ai/). On the side, I advise and angel-invest in early-stage founders building hard things in regulated markets.
 
 If you're a technical founder shipping into the physical world, [reach out](mailto:adriana.galer.rotaru@gmail.com).

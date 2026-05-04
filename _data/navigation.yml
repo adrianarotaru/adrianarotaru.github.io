@@ -1,6 +1,6 @@
 # main links links
 main:
-  - title: "Advising"
+  - title: "Startups"
     url: /advising/
 
   - title: "Research"
@@ -9,7 +9,7 @@ main:
   - title: "Projects"
     url: /projects/
 
-  - title: "Media"
+  - title: "Featured In"
     url: /media/    
 
   # - title: "Teaching"
@@ -18,6 +18,6 @@ main:
   # - title: "Portfolio"
   #   url: /portfolio/
 
-  - title: "Blog"
+  - title: "Personal Notes"
     url: /year-archive/
     
