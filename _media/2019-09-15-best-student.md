@@ -10,4 +10,4 @@ external_url: "https://unica.md/monden/lista-celor-mai-buni-studenti-moldoveni-c
 ---
 The Gala of Students Originating from Moldova nominates 27 students originating from Moldova who study abroad for outstanding academic performances and professional achievements.
 
-[More information here](https://unica.md/monden/lista-celor-mai-buni-studenti-moldoveni-care-isi-fac-studiile-in-strainatate/)
+[More](https://unica.md/monden/lista-celor-mai-buni-studenti-moldoveni-care-isi-fac-studiile-in-strainatate/)

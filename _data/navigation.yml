@@ -1,4 +1,4 @@
-# main links links
+# Header — primary links, always visible.
 main:
   - title: "Startups"
     url: /advising/
@@ -10,17 +10,12 @@ main:
     url: /technical-notes/
 
   - title: "Featured In"
-    url: /media/    
+    url: /media/
 
-  # - title: "Teaching"
-  #   url: /teaching/    
-    
-  # - title: "Portfolio"
-  #   url: /portfolio/
-
+# Hamburger — secondary links, always rendered into the dropdown.
+secondary:
   - title: "Projects"
     url: /projects/
 
   - title: "Personal"
     url: /year-archive/
-    
