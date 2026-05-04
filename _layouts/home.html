@@ -68,7 +68,7 @@ layout: default
     {% if page.tiles %}
     <nav class="home__tiles" aria-label="Sections">
       {% for tile in page.tiles %}
-        <a class="home__tile" href="{{ tile.url | prepend: base_path }}">
+        <a class="home__tile" href="{{ tile.url | prepend: base_path }}" style="--tile-index: {{ forloop.index0 }};">
           <span class="home__tile-title">{{ tile.title }}</span>
           {% if tile.description %}<span class="home__tile-desc">{{ tile.description }}</span>{% endif %}
           <span class="home__tile-arrow" aria-hidden="true">&rarr;</span>

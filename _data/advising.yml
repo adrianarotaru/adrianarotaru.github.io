@@ -1,9 +1,10 @@
-# Advising & angel investing engagements.
+# Early Stage Startup Advising & Founder's support.
 # Rendered in two places:
 #   - Home page (/) — compact teaser list (first few entries)
 #   - /advising/ page — full detail for every entry
 #
-# Ordering: reverse chronological by start year.
+# Ordering: named (non-stealth) engagements first, reverse chronological by
+# start year; stealth engagements grouped at the end, also reverse chronological.
 
 engagements:
   - company: "SkyEU"
@@ -15,27 +16,25 @@ engagements:
     short: "Autonomous eVTOL medical-delivery drones, Europe."
     founders:
       - name: "Mirko Franzoni"
-        role: "CEO & Co-founder"
         linkedin: "https://www.linkedin.com/in/mirko-franzoni-578b21270/"
       - name: "Niccolò Fratamico"
-        role: "CTO & Co-founder"
     goal: "Autonomous eVTOL drones for emergency medical delivery across Europe, with a mission to lift sudden-cardiac-arrest survival from ~8% to 60% by cutting response times."
-    scope: "Regulatory strategy and certification path, engineering for high-precision medical delivery, next-market expansion, and access to funding."
-    # achievement: # TODO — confirm a public milestone to credit
-
-  - company: "Coatue-backed autonomous-systems startup"
-    domain: "Drones · Autonomous systems"
-    location: "US · Seed · Stealth"
-    period: "2026 — present"
-    short: "Guiding engineering org growth to first autonomous pilots."
-    scope: "Weekly advisor to leadership; guiding engineering org growth and the path from research to first end-to-end autonomous pilots."
-
-  - company: "Home-delivery drones startup"
-    domain: "Drones"
-    location: "India · Seed · Stealth"
-    period: "2025"
-    short: "Home-delivery drone platform, market expansion."
-    scope: "Advised the Head of Engineering on market expansion and scaling for a home-delivery drone platform."
+    scope:
+      - topic: "Regulatory Strategy & Certification"
+        detail: "EU certification path for medical drone operations."
+      - topic: "Medical-Grade Engineering"
+        detail: "design and operational rigor for high-precision medical delivery payloads."
+      - topic: "Next-Market Expansion"
+        detail: "sequencing entry into adjacent European markets."
+      - topic: "Fundraising Access"
+        detail: "investor introductions and round positioning."
+    partners:
+      - name: "KC4"
+      - name: "ABZero"
+        url: "https://www.abzero.it/"
+      - name: "Beamflight"
+        url: "https://www.beamflight.com/"
+    achievement: "Selected for the Rubik Garage HealthTech Edition accelerator program (Rubik Hub)."
 
   - company: "Kontaris"
     url: "https://www.kontaris.de/"
@@ -44,17 +43,17 @@ engagements:
     location: "Munich, Germany"
     period: "2025 — present"
     short: "AI infrastructure for hospital finance."
-    # founders: # TODO — confirm whether Raphael Kaiser and Carlos Menke are co-founders
+    founders:
+      - name: "Raphael Kaiser"
+        linkedin: "https://de.linkedin.com/in/raphael-kaiser"
+      - name: "Carlos Menke"
     goal: "AI infrastructure for hospital finance — automating the regulatory and billing workflows that sit between hospitals and payors."
-    scope: "Building out the engineering organization and technical hiring for a platform shipping into heavily regulated healthcare-finance buyers."
+    scope:
+      - topic: "Engineering Organization Building"
+        detail: "scaling the engineering team for a platform shipping into heavily regulated healthcare-finance buyers."
+      - topic: "Technical Hiring"
+        detail: "sourcing and assessment for senior engineering roles."
     # achievement: # TODO
-
-  - company: "Consumer health startup"
-    domain: "HealthTech · Consumer"
-    location: "Eastern Europe · Stealth"
-    period: "2025"
-    short: "Consumer weight-loss apps, Middle East expansion."
-    scope: "Advised on consumer weight-loss and tracking apps, including expansion into the Middle East."
 
   - company: "Arda"
     url: "https://www.ardaimpact.com/"
@@ -64,8 +63,79 @@ engagements:
     period: "2021 — 2022"
     short: "Enterprise drone delivery, EU expansion and certification."
     founders:
-      - name: "Mehmet Arda"
-        role: "Founder"
+      - name: "Jan Kryca"
+        linkedin: "https://www.linkedin.com/in/jkryca/"
     goal: "Scalable drone delivery for enterprise last-mile logistics, operated from a smartphone or tablet — with an early focus on underserved markets."
-    scope: "Early-stage advising on EU market expansion and drone-operations regulatory certification."
+    scope:
+      - topic: "EU Market Expansion"
+        detail: "entry strategy for European drone-delivery markets."
+      - topic: "Regulatory Certification"
+        detail: "guidance on the drone-operations certification path in the EU."
     # achievement: # TODO — note: public signals suggest the company may have wound down; confirm framing
+
+  # ── Stealth engagements ──────────────────────────────────────────────────────
+
+  - company: "Stealth"
+    domain: "Drones · Autonomous systems"
+    location: "US · Seed · Stealth"
+    period: "2026 — present"
+    short: "Guiding engineering org growth to first autonomous pilots."
+    founders:
+      - name: "Nabeel Alamgir"
+        linkedin: "https://www.linkedin.com/in/nabeelalamgir/"
+    backers:
+      - name: "Coatue"
+        url: "https://www.coatue.com/"
+    scope:
+      - topic: "Engineering Organization Growth"
+        detail: "scaling the engineering org from research toward shipping product."
+      - topic: "Research-to-Pilot Roadmap"
+        detail: "path from research to first end-to-end autonomous pilots."
+      - topic: "Leadership Cadence"
+        detail: "weekly advisor sessions with the leadership team."
+
+  - company: "Stealth"
+    domain: "Drones"
+    location: "India · Seed · Stealth"
+    period: "2025"
+    short: "Home-delivery drone platform, market expansion."
+    scope:
+      - topic: "Market Expansion"
+        detail: "advising the Head of Engineering on next-market entry."
+      - topic: "Operational Scaling"
+        detail: "scaling light-package, high-precision home delivery for urban areas."
+
+  - company: "Stealth"
+    domain: "HealthTech · Consumer"
+    location: "Eastern Europe · Stealth"
+    period: "2025"
+    short: "Consumer weight-loss apps, Middle East expansion."
+    founders:
+      - name: "Dr. Suzanne O'Connell"
+        linkedin: "https://www.linkedin.com/in/dr-suzanne-o-connell/"
+    scope:
+      - topic: "Product Strategy"
+        detail: "consumer weight-loss and tracking apps."
+      - topic: "Middle East Expansion"
+        detail: "go-to-market sequencing for new geographies."
+
+# Prior full-time operating experience. Rendered in its own section on /advising/
+# to keep it visually and semantically separate from advising/investing engagements.
+operating:
+  - company: "Zipline"
+    url: "https://www.zipline.com/"
+    linkedin: "https://www.linkedin.com/company/zipline/"
+    domain: "Drones · Instant logistics · Medical & home delivery"
+    location: "South San Francisco, US · Global ops"
+    period: "4 years"
+    short: "Routing engine and airspace operations on the world's largest autonomous logistics network."
+    scope_label: "Role"
+    scope:
+      - topic: "Routing Engine"
+        detail: "built core pieces of the routing engine powering Zipline's autonomous flights."
+      - topic: "Airspace Expansion & Operationability"
+        detail: "major contributor across new countries and US sites."
+      - topic: "Multi-Platform Operations"
+        detail: "covering both Platform 1 (long-range fixed-wing medical delivery) and Platform 2 (precision home delivery)."
+    achievement_label: "Milestones"
+    achievement: "Helped scale to 2M+ commercial autonomous deliveries; first operator authorized under the FAA BEYOND program for long-range BVLOS Part 135 deliveries (fixed-wing); instantaneous deliveries on Platform 1 and Platform 2."

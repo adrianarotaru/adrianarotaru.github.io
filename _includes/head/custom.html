@@ -24,4 +24,15 @@
 <meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
 
+<script>
+  // Progressive enhancement flag — used by CSS to gate entrance animations
+  // (elements stay visible if JS fails to load).
+  document.documentElement.classList.remove('no-js');
+  document.documentElement.classList.add('js');
+  // Mark reduced-motion preference on the root for CSS feature detection.
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('reduce-motion');
+  }
+</script>
+
 <!-- end custom head snippets -->

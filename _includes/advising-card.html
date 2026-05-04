@@ -1,0 +1,70 @@
+<li class="home__advise-item reveal" id="{{ include.item.company | slugify }}">
+  <div class="home__advise-head">
+    <span class="home__advise-company">
+      {% if include.item.url %}<a href="{{ include.item.url }}" target="_blank" rel="noopener">{{ include.item.company }}</a>{% else %}{{ include.item.company }}{% endif %}
+      {% if include.item.linkedin %}<a class="home__advise-ext" href="{{ include.item.linkedin }}" target="_blank" rel="noopener" aria-label="{{ include.item.company }} on LinkedIn">LinkedIn</a>{% endif %}
+    </span>
+    <span class="home__advise-period">{{ include.item.period }}</span>
+  </div>
+  <div class="home__advise-meta">
+    {{ include.item.domain }}{% if include.item.location %} · {{ include.item.location }}{% endif %}
+  </div>
+
+  {% if include.item.founders %}
+    <div class="home__advise-line">
+      <span class="home__advise-label">{% if include.item.founders.size == 1 %}Founder{% else %}Founders{% endif %}</span>
+      <span class="home__advise-body">
+        {% for f in include.item.founders %}{% unless forloop.first %}, {% endunless %}{% if f.linkedin %}<a href="{{ f.linkedin }}" target="_blank" rel="noopener">{{ f.name }}</a>{% else %}{{ f.name }}{% endif %}{% endfor %}
+      </span>
+    </div>
+  {% endif %}
+
+  {% if include.item.backers %}
+    <div class="home__advise-line">
+      <span class="home__advise-label">Backers</span>
+      <span class="home__advise-body">
+        {% for b in include.item.backers %}{% unless forloop.first %}, {% endunless %}{% if b.url %}<a href="{{ b.url }}" target="_blank" rel="noopener">{{ b.name }}</a>{% else %}{{ b.name }}{% endif %}{% endfor %}
+      </span>
+    </div>
+  {% endif %}
+
+  {% if include.item.goal %}
+    <div class="home__advise-line">
+      <span class="home__advise-label">Mission</span>
+      <span class="home__advise-body">{{ include.item.goal }}</span>
+    </div>
+  {% endif %}
+
+  {% if include.item.scope %}
+    <div class="home__advise-line">
+      <span class="home__advise-label">{{ include.item.scope_label | default: 'Engagement Scope' }}</span>
+      <span class="home__advise-body">
+        {% if include.item.scope.first.topic %}
+          <ul class="home__advise-bullets">
+            {% for s in include.item.scope %}
+              <li><strong>{{ s.topic }}</strong>{% if s.detail %} — {{ s.detail }}{% endif %}</li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          {{ include.item.scope }}
+        {% endif %}
+      </span>
+    </div>
+  {% endif %}
+
+  {% if include.item.partners %}
+    <div class="home__advise-line">
+      <span class="home__advise-label">Partners</span>
+      <span class="home__advise-body">
+        {% for p in include.item.partners %}{% unless forloop.first %}, {% endunless %}{% if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}{% endfor %}
+      </span>
+    </div>
+  {% endif %}
+
+  {% if include.item.achievement %}
+    <div class="home__advise-line">
+      <span class="home__advise-label">{{ include.item.achievement_label | default: 'Since' }}</span>
+      <span class="home__advise-body">{{ include.item.achievement }}</span>
+    </div>
+  {% endif %}
+</li>
