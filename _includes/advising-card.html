@@ -19,6 +19,17 @@
     </div>
   {% endif %}
 
+  {% if include.item.team %}
+    {% for member in include.item.team %}
+      <div class="home__advise-line">
+        <span class="home__advise-label">{{ member.role }}</span>
+        <span class="home__advise-body">
+          {% if member.linkedin %}<a href="{{ member.linkedin }}" target="_blank" rel="noopener">{{ member.name }}</a>{% else %}{{ member.name }}{% endif %}
+        </span>
+      </div>
+    {% endfor %}
+  {% endif %}
+
   {% if include.item.backers %}
     <div class="home__advise-line">
       <span class="home__advise-label">Backers</span>

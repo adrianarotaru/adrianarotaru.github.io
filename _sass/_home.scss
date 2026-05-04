@@ -1130,14 +1130,27 @@ li.home__advise-item {
 
 .home__advise-body {
   color: $home-fg;
+}
 
-  a {
-    color: $home-fg;
-    text-decoration: none;
-    border-bottom: 1px solid $home-line;
-    padding-bottom: 1px;
-    transition: border-color 0.15s ease;
-    &:hover { border-bottom-color: $home-fg; }
+/* Card links use a single, controllable underline via `text-decoration-color`.
+   Higher specificity (`ul.home__advise … a`) deliberately beats the global
+   `.archive a` rule in `_archive.scss` that would otherwise stack a second
+   underline on top of our own border-bottom. The line stays faint at rest and
+   "fills in" to full contrast on hover — no double underline, no color shift
+   needed. Applies to founder, backer, partner, and inline links inside cards. */
+ul.home__advise .home__advise-body a {
+  color: $home-fg;
+  text-decoration: underline;
+  text-decoration-color: $home-line;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  border-bottom: none;
+  padding-bottom: 0;
+  transition: text-decoration-color 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    text-decoration-color: $home-fg;
   }
 }
 

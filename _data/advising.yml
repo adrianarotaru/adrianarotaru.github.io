@@ -47,6 +47,7 @@ engagements:
       - name: "Raphael Kaiser"
         linkedin: "https://de.linkedin.com/in/raphael-kaiser"
       - name: "Carlos Menke"
+        linkedin: "https://www.linkedin.com/in/mcmenke/"
     goal: "AI infrastructure for hospital finance — automating the regulatory and billing workflows that sit between hospitals and payors."
     scope:
       - topic: "Engineering Organization Building"
@@ -99,9 +100,13 @@ engagements:
     location: "India · Seed · Stealth"
     period: "2025"
     short: "Home-delivery drone platform, market expansion."
+    team:
+      - role: "Head of Engineering"
+        name: "Rushil Batra"
+        linkedin: "https://www.linkedin.com/in/rushilbatra/"
     scope:
       - topic: "Market Expansion"
-        detail: "advising the Head of Engineering on next-market entry."
+        detail: "advising on next-market entry."
       - topic: "Operational Scaling"
         detail: "scaling light-package, high-precision home delivery for urban areas."
 
