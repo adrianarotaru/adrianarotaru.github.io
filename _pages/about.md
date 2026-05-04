@@ -8,43 +8,20 @@ author_profile: false
 redirect_from:
   - /about/
   - /about.html
-  - /cv/
-  - /resume/
 
-now: |
-  Founding Engineer at **Serval**, building enterprise AI agents for IT Service Management.
-  In parallel, I advise and angel-invest in early-stage founders scaling autonomous systems,
-  drone delivery, and healthtech. Always happy to talk to technical founders shipping into
-  safety-critical, highly regulated markets.
-
-featured:
-  - title: "Zipline — Autonomous drone delivery"
-    description: "Helped scale autonomous delivery worldwide; 1.2M+ vaccine and blood doses delivered globally."
-    tag: "Industry"
-    year: "2021–2025"
-    url: "https://www.zipline.com/"
-    external: true
-
-  - title: "Snoring detection on a microcontroller"
-    description: "Bedside snoring classifier running on-device for early diagnosis of sleep apnea risk factors."
-    tag: "Project"
-    year: "2020"
-    collection: "projects"
-    slug: "2020-12-20-snoring-detection"
-
-  - title: "Embedded DNNs for battery cyclability"
-    description: "Predicting EV battery life from the first 50 cycles, deployed on automotive microcontrollers."
-    tag: "Research"
-    year: "2021"
-    collection: "research"
-    slug: "2021-05-31-embedded-dnn-battery"
-
-  - title: "Bowditch & Vanhoutte phenomena in heart failure"
-    description: "Cardiology research on ischemia–reperfusion impact, published in the European Journal of Heart Failure."
-    tag: "Research"
-    year: "2018"
-    collection: "research"
-    slug: "2018-05-01-bowditch"
+tiles:
+  - title: "Research"
+    description: "Published papers in cardiology, embedded ML, and microcontroller systems."
+    url: /research/
+  - title: "Projects"
+    description: "Side projects in embedded ML, autonomous systems, and graphics."
+    url: /projects/
+  - title: "Advising"
+    description: "Advising and angel investing in drone delivery, autonomous systems, and healthtech."
+    url: /advising/
+  - title: "Media & talks"
+    description: "Interviews, articles, and conference appearances."
+    url: /media/
 ---
 
 I'm an engineer building reliable technology for the physical world — at the intersection of **autonomous systems** and **medical / healthcare technology**.
