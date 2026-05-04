@@ -6,7 +6,7 @@ main:
   - title: "Research"
     url: /research/
 
-  - title: "Technical Notes"
+  - title: "Writing"
     url: /technical-notes/
 
   - title: "Featured In"
@@ -21,6 +21,6 @@ main:
   - title: "Projects"
     url: /projects/
 
-  - title: "Personal Notes"
+  - title: "Personal"
     url: /year-archive/
     

@@ -970,7 +970,7 @@ body #main {
   margin: 0.15rem 0 0 !important;
 }
 
-/* The first <p> after the title is the "Posting: venue, year" line —
+/* The first <p> after the title is the "venue, year" line —
    give it a tiny monospace meta treatment. */
 .archive__item-title + p {
   font-family: $home-mono;
@@ -1149,7 +1149,7 @@ li.home__advise-item {
   color: $home-fg;
 }
 
-/* Technical Notes cards — preview body and CTA link span the full card width
+/* Writing cards — preview body and CTA link span the full card width
    (no label column), so we render as plain block elements instead of using
    the labeled-row grid layout that the advising cards use. */
 .technical-note__preview {
@@ -1166,6 +1166,69 @@ li.home__advise-item {
 
 .technical-note__cta {
   margin-top: 0.5rem;
+}
+
+/* Project cards — full body rendered inline (description, link rows, preview
+   image). The link rows are markdown paragraphs containing a single anchor;
+   the preview image is a markdown link wrapping an `<img>`. */
+.project__body {
+  margin: 0.75rem 0 0;
+
+  p {
+    margin: 0 0 0.6rem;
+    color: $home-fg;
+    font-size: 0.93rem;
+    line-height: 1.6;
+    letter-spacing: -0.005em;
+
+    &:last-child { margin-bottom: 0; }
+  }
+
+  /* Standalone link rows ("Access code here", "Download paper here", etc.). */
+  p > a:only-child {
+    font-family: $home-mono;
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+    color: $home-muted;
+    text-decoration: underline;
+    text-decoration-color: $home-line;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
+    border-bottom: none;
+    padding-bottom: 0;
+
+    &:hover,
+    &:focus-visible {
+      color: $home-fg;
+      text-decoration-color: $home-fg;
+    }
+  }
+
+  /* Image-link preview: drop the underline + meta styling so the thumbnail
+     reads as a tappable image, not a labeled link. */
+  p > a:only-child:has(img) {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+  }
+
+  /* Tighter spacing around image-only paragraphs since the image owns the
+     vertical rhythm. */
+  p:has(> img),
+  p:has(> a > img) {
+    margin: 0.85rem 0 0;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid $home-line;
+  }
 }
 
 ul.home__advise a.technical-note__read-more {

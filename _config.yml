@@ -179,16 +179,16 @@ collections:
   #   output: true
   #   permalink: /:collection/:path/
   research:
-    output: true
+    output: false
     permalink: /:collection/:path/
   projects:
-    output: true
+    output: false
     permalink: /:collection/:path/
   # portfolio:
   #   output: true
   #   permalink: /:collection/:path/
   media:
-    output: true
+    output: false
     permalink: /:collection/:path/
   technical_notes:
     output: true
@@ -206,7 +206,6 @@ defaults:
       read_time: true
       comments: true
       share: true
-      related: true
   # _pages
   - scope:
       path: ""

@@ -5,12 +5,26 @@ permalink: /media/
 author_profile: false
 ---
 
-<!-- {% if site.talkmap_link == true %}
+<ul class="home__advise">
+  {% assign articles = site.media | sort: 'date' | reverse %}
+  {% for article in articles %}
+    <li class="home__advise-item reveal" id="{{ article.title | slugify }}">
+      <div class="home__advise-head">
+        <span class="home__advise-company">
+          {% if article.external_url %}<a href="{{ article.external_url }}" target="_blank" rel="noopener">{{ article.title }}</a>{% else %}{{ article.title }}{% endif %}
+        </span>
+        <span class="home__advise-period">{{ article.date | date: '%b %Y' }}</span>
+      </div>
 
-<p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places where I was featured!</a></p>
+      {% if article.venue or article.location %}
+        <div class="home__advise-meta">
+          {% if article.type %}{{ article.type }}{% endif %}{% if article.venue %}{% if article.type %}, {% endif %}{{ article.venue }}{% endif %}{% if article.location %}, {{ article.location }}{% endif %}
+        </div>
+      {% endif %}
 
-{% endif %} -->
-
-{% for post in site.media reversed %}
-  {% include archive-single-article.html %}
-{% endfor %}
+      <div class="project__body">
+        {{ article.content }}
+      </div>
+    </li>
+  {% endfor %}
+</ul>
