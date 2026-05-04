@@ -1,7 +1,7 @@
 # Header — primary links, always visible.
 main:
   - title: "Startups"
-    url: /advising/
+    url: /startups/
 
   - title: "Research"
     url: /research/

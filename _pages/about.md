@@ -12,7 +12,7 @@ redirect_from:
 tiles:
   - title: "Startups"
     description: "Advising and angel investing in drone delivery, autonomous systems, and healthtech."
-    url: /advising/
+    url: /startups/
   - title: "Research"
     description: "Published papers in cardiology, embedded ML, and microcontroller systems."
     url: /research/
