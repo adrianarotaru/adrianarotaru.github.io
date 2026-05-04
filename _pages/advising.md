@@ -9,7 +9,7 @@ author_profile: false
 
 <div class="advise-lede">
   <p>
-    My goal is to help exceptional founders build generational companies in the industries in autonomous systems, drone delivery, and healthtech. These are some of the hardest
+    My goal is to help exceptional founders build generational companies in autonomous systems, drone delivery, and healthtech. These are some of the hardest
     markets to build in: margins are thin, R&amp;D cycles are long, the path from build to production
     nonlinear — often requiring a rebuild from scratch — and regulation is unforgiving. Standing
     up vertically integrated companies operating in the physical world, demands deep
