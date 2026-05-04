@@ -72,6 +72,63 @@ layout: default
     </section>
     {% endif %}
 
+    {% if page.advising %}
+    <section class="home__section">
+      <h2 class="home__section-title">Advising &amp; angel investing</h2>
+      <p class="home__section-lede">
+        Selected engagements with early-stage founders in drone delivery, autonomous systems, and healthtech.
+        Common threads: building engineering teams, navigating regulation and certification, market expansion,
+        and shipping first end-to-end pilots into safety-critical environments.
+      </p>
+      <ul class="home__advise">
+        {% for item in page.advising %}
+          <li class="home__advise-item">
+            <div class="home__advise-head">
+              <span class="home__advise-company">
+                {% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.company }}</a>{% else %}{{ item.company }}{% endif %}
+                {% if item.linkedin %}<a class="home__advise-ext" href="{{ item.linkedin }}" target="_blank" rel="noopener" aria-label="{{ item.company }} on LinkedIn">LinkedIn</a>{% endif %}
+              </span>
+              <span class="home__advise-period">{{ item.period }}</span>
+            </div>
+            <div class="home__advise-meta">
+              {{ item.domain }}{% if item.location %} · {{ item.location }}{% endif %}
+            </div>
+
+            {% if item.founders %}
+              <div class="home__advise-line">
+                <span class="home__advise-label">Founders</span>
+                <span class="home__advise-body">
+                  {% for f in item.founders %}{% unless forloop.first %}, {% endunless %}{% if f.linkedin %}<a href="{{ f.linkedin }}" target="_blank" rel="noopener">{{ f.name }}</a>{% else %}{{ f.name }}{% endif %}{% if f.role %} <span class="home__advise-role">— {{ f.role }}</span>{% endif %}{% endfor %}
+                </span>
+              </div>
+            {% endif %}
+
+            {% if item.goal %}
+              <div class="home__advise-line">
+                <span class="home__advise-label">Mission</span>
+                <span class="home__advise-body">{{ item.goal }}</span>
+              </div>
+            {% endif %}
+
+            {% if item.scope %}
+              <div class="home__advise-line">
+                <span class="home__advise-label">Scope</span>
+                <span class="home__advise-body">{{ item.scope }}</span>
+              </div>
+            {% endif %}
+
+            {% if item.achievement %}
+              <div class="home__advise-line">
+                <span class="home__advise-label">Since</span>
+                <span class="home__advise-body">{{ item.achievement }}</span>
+              </div>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+
     {% if page.featured %}
     <section class="home__section">
       <h2 class="home__section-title">Selected work</h2>
@@ -105,6 +162,81 @@ layout: default
         <a href="{{ base_path }}/research/">All research &rarr;</a>
         <a href="{{ base_path }}/projects/">All projects &rarr;</a>
       </p>
+    </section>
+    {% endif %}
+
+    {% if page.experience %}
+    <section class="home__section">
+      <h2 class="home__section-title">Experience</h2>
+      <ol class="home__timeline">
+        {% for job in page.experience %}
+          <li class="home__timeline-item">
+            <div class="home__timeline-head">
+              <div class="home__timeline-head-main">
+                <span class="home__timeline-role">{{ job.role }}</span>
+                <span class="home__timeline-company">
+                  {% if job.url %}<a href="{{ job.url }}" target="_blank" rel="noopener">{{ job.company }}</a>{% else %}{{ job.company }}{% endif %}{% if job.location %} · {{ job.location }}{% endif %}
+                </span>
+              </div>
+              <span class="home__timeline-period">{{ job.period }}</span>
+            </div>
+            {% if job.highlights %}
+              <ul class="home__timeline-highlights">
+                {% for point in job.highlights %}
+                  <li>{{ point }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ol>
+    </section>
+    {% endif %}
+
+    {% if page.education %}
+    <section class="home__section">
+      <h2 class="home__section-title">Education</h2>
+      <ul class="home__edu">
+        {% for edu in page.education %}
+          <li class="home__edu-item">
+            <div class="home__edu-head">
+              <span class="home__edu-school">{{ edu.school }}</span>
+              <span class="home__edu-period">{{ edu.period }}</span>
+            </div>
+            <div class="home__edu-degree">{{ edu.degree }}</div>
+            {% if edu.notes %}<div class="home__edu-notes">{{ edu.notes }}</div>{% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+
+    {% if page.leadership %}
+    <section class="home__section">
+      <h2 class="home__section-title">Leadership &amp; volunteer</h2>
+      <ul class="home__edu">
+        {% for item in page.leadership %}
+          <li class="home__edu-item">
+            <div class="home__edu-head">
+              <span class="home__edu-school">{{ item.role }}</span>
+              <span class="home__edu-period">{{ item.period }}</span>
+            </div>
+            <div class="home__edu-degree">{{ item.org }}{% if item.location %} · {{ item.location }}{% endif %}</div>
+            {% if item.description %}<div class="home__edu-notes">{{ item.description }}</div>{% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+
+    {% if page.awards %}
+    <section class="home__section">
+      <h2 class="home__section-title">Awards</h2>
+      <ul class="home__awards">
+        {% for award in page.awards %}
+          <li>{{ award }}</li>
+        {% endfor %}
+      </ul>
     </section>
     {% endif %}
 

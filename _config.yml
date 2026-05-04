@@ -200,7 +200,6 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
       read_time: true
       comments: true
       share: true
@@ -211,7 +210,6 @@ defaults:
       type: pages
     values:
       layout: single
-      author_profile: true
   # # _teaching
   # - scope:
   #     path: ""
@@ -227,7 +225,6 @@ defaults:
       type: research
     values:
       layout: single
-      author_profile: true
       share: true
       comments: true
   # _projects
@@ -236,7 +233,6 @@ defaults:
       type: projects
     values:
       layout: single
-      author_profile: true
       share: true
       comments: true
   # # _portfolio
@@ -254,7 +250,6 @@ defaults:
       type: media
     values:
       layout: article
-      author_profile: true
       share: true
 
 # Sass/SCSS

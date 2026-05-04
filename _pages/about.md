@@ -2,17 +2,20 @@
 permalink: /
 layout: home
 title: "Adriana Galer Rotaru"
-tagline: "medical technology · advising · investing"
-excerpt: "Engineer working on autonomous and medical technologies. Advisor and investor in early-stage companies."
+tagline: "autonomous systems · healthtech · advising"
+excerpt: "Engineer building reliable autonomous and medical technology. Advisor and angel investor to founders in drone delivery, healthtech, and other regulated, real-world markets."
 author_profile: false
 redirect_from:
   - /about/
   - /about.html
+  - /cv/
+  - /resume/
 
 now: |
-  Building something new in autonomous and medical technologies. Advising and investing in
-  early-stage founders working on hard, real-world systems. Always happy to talk to people
-  building reliable technology in regulated and physical-world domains.
+  Founding Engineer at **Serval**, building enterprise AI agents for IT Service Management.
+  In parallel, I advise and angel-invest in early-stage founders scaling autonomous systems,
+  drone delivery, and healthtech. Always happy to talk to technical founders shipping into
+  safety-critical, highly regulated markets.
 
 featured:
   - title: "Zipline — Autonomous drone delivery"
@@ -44,8 +47,8 @@ featured:
     slug: "2018-05-01-bowditch"
 ---
 
-I'm an engineer who builds reliable technology for the physical world. Most of my career has been spent at the intersection of autonomous systems and medical technology — taking research-grade ideas and shipping them into safety-critical, real-world deployments.
+I'm an engineer building reliable technology for the physical world — at the intersection of **autonomous systems** and **medical / healthcare technology**.
 
-Most recently I was at [Zipline](https://www.zipline.com/), where I helped scale autonomous drone delivery to global operations, contributing to 1.2M+ vaccine and blood doses delivered across the globe. Before that, I conducted research in cardiology and worked on embedded ML for medical and automotive devices at Harvard.
+I graduated from Harvard in 2021 with a degree in **Computer Science and Physics**. Since then I've worked on developer tools at [Microsoft](https://azure.microsoft.com/), spent four years on autonomous drone systems and medical deliveries at [Zipline](https://www.zipline.com/), and now build enterprise AI agents as a Founding Engineer at [Serval](https://serval.ai/). On the side, I advise and angel-invest in early-stage founders — helping them grow their ideas, design efficient engineering orgs, attract top talent, and expand into difficult markets.
 
-Today I split my time between **building** something new of my own and **advising and investing** in early-stage founders working on hard, regulated, real-world systems.
+If you're a technical founder shipping into the physical world, [reach out](mailto:adriana.galer.rotaru@gmail.com).

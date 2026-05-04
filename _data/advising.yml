@@ -1,0 +1,71 @@
+# Advising & angel investing engagements.
+# Rendered in two places:
+#   - Home page (/) — compact teaser list (first few entries)
+#   - /advising/ page — full detail for every entry
+#
+# Ordering: reverse chronological by start year.
+
+engagements:
+  - company: "SkyEU"
+    url: "https://www.skyeu.it/"
+    linkedin: "https://www.linkedin.com/company/skyeu/"
+    domain: "Drones · Medical delivery"
+    location: "Turin, Italy · Seed"
+    period: "2026 — present"
+    short: "Autonomous eVTOL medical-delivery drones, Europe."
+    founders:
+      - name: "Mirko Franzoni"
+        role: "CEO & Co-founder"
+        linkedin: "https://www.linkedin.com/in/mirko-franzoni-578b21270/"
+      - name: "Niccolò Fratamico"
+        role: "CTO & Co-founder"
+    goal: "Autonomous eVTOL drones for emergency medical delivery across Europe, with a mission to lift sudden-cardiac-arrest survival from ~8% to 60% by cutting response times."
+    scope: "Regulatory strategy and certification path, engineering for high-precision medical delivery, next-market expansion, and access to funding."
+    # achievement: # TODO — confirm a public milestone to credit
+
+  - company: "Coatue-backed autonomous-systems startup"
+    domain: "Drones · Autonomous systems"
+    location: "US · Seed · Stealth"
+    period: "2026 — present"
+    short: "Guiding engineering org growth to first autonomous pilots."
+    scope: "Weekly advisor to leadership; guiding engineering org growth and the path from research to first end-to-end autonomous pilots."
+
+  - company: "Home-delivery drones startup"
+    domain: "Drones"
+    location: "India · Seed · Stealth"
+    period: "2025"
+    short: "Home-delivery drone platform, market expansion."
+    scope: "Advised the Head of Engineering on market expansion and scaling for a home-delivery drone platform."
+
+  - company: "Kontaris"
+    url: "https://www.kontaris.de/"
+    linkedin: "https://www.linkedin.com/company/kontaris/"
+    domain: "HealthTech · AI infrastructure"
+    location: "Munich, Germany"
+    period: "2025 — present"
+    short: "AI infrastructure for hospital finance."
+    # founders: # TODO — confirm whether Raphael Kaiser and Carlos Menke are co-founders
+    goal: "AI infrastructure for hospital finance — automating the regulatory and billing workflows that sit between hospitals and payors."
+    scope: "Building out the engineering organization and technical hiring for a platform shipping into heavily regulated healthcare-finance buyers."
+    # achievement: # TODO
+
+  - company: "Consumer health startup"
+    domain: "HealthTech · Consumer"
+    location: "Eastern Europe · Stealth"
+    period: "2025"
+    short: "Consumer weight-loss apps, Middle East expansion."
+    scope: "Advised on consumer weight-loss and tracking apps, including expansion into the Middle East."
+
+  - company: "Arda"
+    url: "https://www.ardaimpact.com/"
+    linkedin: "https://www.linkedin.com/company/ardaimpact/"
+    domain: "Drones · Logistics"
+    location: "New York, US · Banjul, Gambia"
+    period: "2021 — 2022"
+    short: "Enterprise drone delivery, EU expansion and certification."
+    founders:
+      - name: "Mehmet Arda"
+        role: "Founder"
+    goal: "Scalable drone delivery for enterprise last-mile logistics, operated from a smartphone or tablet — with an early focus on underserved markets."
+    scope: "Early-stage advising on EU market expansion and drone-operations regulatory certification."
+    # achievement: # TODO — note: public signals suggest the company may have wound down; confirm framing
