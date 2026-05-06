@@ -21,7 +21,7 @@ tiles:
     url: /media/
   - title: "Writing"
     description: "Professional articles, technical writing, and essays."
-    url: /technical-notes/
+    url: /writing/
 ---
 
 I spend my time helping exceptional founders **building technology for the physical world** — where reliability and customer safety is non-negotiable.
