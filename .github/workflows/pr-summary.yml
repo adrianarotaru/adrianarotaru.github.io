@@ -30,7 +30,12 @@ jobs:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: |
           python3 - <<'PY'
-          import json, os, urllib.request
+          import json, os, sys, urllib.request, urllib.error
+
+          key = os.environ.get("GROQ_API_KEY", "")
+          if not key:
+              sys.exit("GROQ_API_KEY secret is empty or missing.")
+          print(f"Using GROQ_API_KEY of length {len(key)} starting with {key[:4]}***")
 
           with open("/tmp/pr.input", "r", errors="replace") as f:
               diff = f.read()
@@ -63,8 +68,12 @@ jobs:
               },
               method="POST",
           )
-          with urllib.request.urlopen(req, timeout=60) as resp:
-              data = json.loads(resp.read())
+          try:
+              with urllib.request.urlopen(req, timeout=60) as resp:
+                  data = json.loads(resp.read())
+          except urllib.error.HTTPError as e:
+              body = e.read().decode(errors="replace")
+              sys.exit(f"Groq HTTP {e.code}: {body}")
 
           summary = data["choices"][0]["message"]["content"].strip()
           with open(os.environ["GITHUB_OUTPUT"], "a") as out:
