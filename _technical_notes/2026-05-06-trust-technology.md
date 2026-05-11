@@ -12,7 +12,6 @@ Not blindly. But enough to let it operate in the real world.
 I have noticed the best engineers lead with:
 
 *"Think it should work"*
-
 rather than
 
 *"I must ensure it works."*
