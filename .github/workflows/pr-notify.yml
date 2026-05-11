@@ -1,0 +1,118 @@
+name: PR Assignee/Reviewer Slack Notify
+
+on:
+  pull_request:
+    types: [assigned, review_requested]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Determine target user
+        id: target
+        env:
+          GH_EVENT: ${{ toJson(github.event) }}
+        run: |
+          python3 - <<'PY'
+          import json, os
+          event = json.loads(os.environ["GH_EVENT"])
+          action = event.get("action")
+          login, role = None, None
+          if action == "assigned":
+              login = (event.get("assignee") or {}).get("login")
+              role = "assignee"
+          elif action == "review_requested":
+              login = (event.get("requested_reviewer") or {}).get("login")
+              role = "reviewer"
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"login={login or ''}\n")
+              f.write(f"role={role or ''}\n")
+          PY
+
+      - name: Notify Slack
+        if: steps.target.outputs.login != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: C0B2V10B3HC
+          LOGIN: ${{ steps.target.outputs.login }}
+          ROLE: ${{ steps.target.outputs.role }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          python3 - <<'PY'
+          import json, os, sys, urllib.request, urllib.error
+
+          token = os.environ.get("SLACK_BOT_TOKEN", "")
+          if not token:
+              sys.exit("SLACK_BOT_TOKEN is not set.")
+
+          channel = os.environ["SLACK_CHANNEL_ID"]
+          login = os.environ["LOGIN"]
+          role = os.environ["ROLE"]
+          pr_url = os.environ["PR_URL"]
+          pr_title = os.environ["PR_TITLE"]
+          pr_number = os.environ["PR_NUMBER"]
+
+          UA = "pr-slack-notifier/1.0"
+
+          def http(req):
+              try:
+                  with urllib.request.urlopen(req, timeout=30) as resp:
+                      return json.loads(resp.read())
+              except urllib.error.HTTPError as e:
+                  return {"ok": False, "error": f"http {e.code}: {e.read().decode(errors='replace')}"}
+
+          gh_req = urllib.request.Request(
+              f"https://api.github.com/users/{login}",
+              headers={
+                  "Authorization": f"Bearer {os.environ['GH_TOKEN']}",
+                  "Accept": "application/vnd.github+json",
+                  "User-Agent": UA,
+              },
+          )
+          gh_data = http(gh_req)
+          email = gh_data.get("email")
+          print(f"GitHub user {login} public email: {email}")
+
+          slack_mention = f"`@{login}`"
+          if email:
+              lookup = urllib.request.Request(
+                  f"https://slack.com/api/users.lookupByEmail?email={email}",
+                  headers={
+                      "Authorization": f"Bearer {token}",
+                      "User-Agent": UA,
+                  },
+              )
+              result = http(lookup)
+              if result.get("ok") and result.get("user"):
+                  slack_mention = f"<@{result['user']['id']}>"
+              else:
+                  print(f"Slack lookup failed for {email}: {result}")
+          else:
+              print(f"No public email for {login}; falling back to plain handle.")
+
+          text = (
+              f"{slack_mention} you've been added as {role} on "
+              f"<{pr_url}|#{pr_number}: {pr_title}>"
+          )
+          post_req = urllib.request.Request(
+              "https://slack.com/api/chat.postMessage",
+              data=json.dumps({"channel": channel, "text": text}).encode(),
+              headers={
+                  "Authorization": f"Bearer {token}",
+                  "Content-Type": "application/json; charset=utf-8",
+                  "User-Agent": UA,
+              },
+              method="POST",
+          )
+          res = http(post_req)
+          if not res.get("ok"):
+              sys.exit(f"Slack post failed: {res}")
+          print("Posted to Slack")
+          PY
