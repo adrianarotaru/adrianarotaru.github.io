@@ -7,7 +7,6 @@ on:
 permissions:
   contents: read
   pull-requests: write
-  models: read
 
 jobs:
   summarize:
@@ -25,18 +24,54 @@ jobs:
             --repo ${{ github.repository }} > /tmp/pr.diff
           head -c 60000 /tmp/pr.diff > /tmp/pr.input
 
-      - name: Generate summary
+      - name: Generate summary via Groq
         id: ai
-        uses: actions/ai-inference@v1
-        with:
-          model: openai/gpt-4o-mini
-          system-prompt: |
-            You summarize pull request diffs. Output strict markdown with:
-            - A one-sentence overview
-            - A bullet list of key changes (max 6 bullets)
-            - A short "Risks" section only if obvious risks exist
-            Keep the whole response under 1500 characters. No preamble, no closing remarks.
-          prompt-file: /tmp/pr.input
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+
+          with open("/tmp/pr.input", "r", errors="replace") as f:
+              diff = f.read()
+
+          system = (
+              "You summarize pull request diffs. Output strict markdown with:\n"
+              "- A one-sentence overview\n"
+              "- A bullet list of key changes (max 6 bullets)\n"
+              "- A short \"Risks\" section only if obvious risks exist\n"
+              "Keep the whole response under 1500 characters. "
+              "No preamble, no closing remarks."
+          )
+
+          payload = {
+              "model": "llama-3.3-70b-versatile",
+              "messages": [
+                  {"role": "system", "content": system},
+                  {"role": "user", "content": diff or "(empty diff)"},
+              ],
+              "temperature": 0.3,
+              "max_tokens": 800,
+          }
+
+          req = urllib.request.Request(
+              "https://api.groq.com/openai/v1/chat/completions",
+              data=json.dumps(payload).encode(),
+              headers={
+                  "Authorization": f"Bearer {os.environ['GROQ_API_KEY']}",
+                  "Content-Type": "application/json",
+              },
+              method="POST",
+          )
+          with urllib.request.urlopen(req, timeout=60) as resp:
+              data = json.loads(resp.read())
+
+          summary = data["choices"][0]["message"]["content"].strip()
+          with open(os.environ["GITHUB_OUTPUT"], "a") as out:
+              out.write("response<<__EOF__\n")
+              out.write(summary + "\n")
+              out.write("__EOF__\n")
+          PY
 
       - name: Inject summary into PR body
         env:
